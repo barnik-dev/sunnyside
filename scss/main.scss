@@ -1,0 +1,267 @@
+@import "./colors", "./base", "./mixins";
+
+.banner-wrapper {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 1.7em;
+}
+
+.banner {
+  height: 50rem;
+  background-image: url("../images/desktop/image-header.jpg");
+  background-position: center;
+  background-size: cover;
+
+  header {
+    padding: 2em 0;
+    @include displayFlex(space-between, center, 0);
+
+    .menu-list {
+      @include displayFlex(start, center, 3em);
+      color: $white;
+      & > li:hover {
+        cursor: pointer;
+      }
+
+      .btn {
+        font-family: "Fraunces", serif;
+        font-size: 0.9rem;
+        background-color: $white;
+        color: $very-dark-desaturated-blue;
+        text-transform: uppercase;
+        padding: 1em 1.5em;
+        border-radius: 40px;
+        transition: all 0.15s ease-in-out;
+
+        &:hover {
+          background-color: rgba($white, 0.3);
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .hero {
+    text-align: center;
+    color: $white;
+    margin-top: 3em;
+
+    .arrow {
+      margin-top: 8.5em;
+    }
+  }
+}
+
+.main-wrapper {
+  @extend .banner-wrapper;
+  padding: 0;
+
+  .section-container {
+    @include displayGrid(start, start, 2, 0);
+
+    .text-content {
+      padding: 10em 6em 0;
+      height: 100%;
+
+      h2 {
+        font-size: 2.3rem;
+        max-width: 20rem;
+        color: $very-dark-desaturated-blue;
+      }
+
+      .lead {
+        margin: 1.9em 0;
+        max-width: 28rem;
+      }
+    }
+
+    .image-container {
+      font-size: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .cup {
+    .text-content h2 {
+      max-width: fit-content;
+    }
+
+    .learn-more::after {
+      background-color: $soft-red;
+    }
+  }
+}
+
+.images-wrapper {
+  @extend .main-wrapper;
+
+  .grid-container {
+    @include displayGrid(start, start, 2, 0);
+
+    .cherry {
+      h3,
+      .lead {
+        color: $dark-desaturated-cyan;
+      }
+    }
+
+    .orange {
+      h3,
+      .lead {
+        color: $dark-blue;
+      }
+    }
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+
+    img {
+      width: 100%;
+    }
+
+    .text-container {
+      position: absolute;
+      top: 22em;
+      left: 0;
+      width: 100%;
+
+      h3 {
+        font-size: 1.7rem;
+      }
+
+      .lead {
+        margin: 1.3em auto 0;
+        max-width: 25rem;
+      }
+    }
+  }
+}
+
+.testimonials {
+  margin: 10em 0;
+}
+
+.testimonials-wrapper {
+  @extend .banner-wrapper;
+  padding: 0 6em;
+  text-align: center;
+
+  h4 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: $grayish-blue;
+  }
+
+  .flex-container {
+    margin-top: 5em;
+    @include displayFlex(space-around, start, 0);
+  }
+
+  img {
+    width: 17%;
+    border-radius: 100%;
+  }
+
+  .lead {
+    font-size: 1rem;
+    margin-top: 2.5em;
+    color: $very-dark-grayish-blue;
+    max-width: 20em;
+  }
+
+  .person-detail {
+    margin-top: 2.5em;
+
+    h3 {
+      color: $very-dark-desaturated-blue;
+    }
+
+    .dept {
+      font-size: 0.9rem;
+      color: $grayish-blue;
+      margin-top: 0.8em;
+    }
+  }
+}
+
+.gallery-wrapper {
+  @extend .main-wrapper;
+
+  .grid-container {
+    @include displayGrid(start, start, 4, 0);
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.footer-wrapper {
+  @extend .banner-wrapper;
+}
+
+footer {
+  background-color: $moderate-cyan;
+  text-align: center;
+  padding: 4em 0;
+
+  .logo {
+    font-family: "Barlow", sans-serif;
+    font-size: 1.8rem;
+    color: $dark-blue;
+    text-transform: lowercase;
+    letter-spacing: normal;
+  }
+
+  .footer-menu {
+    color: rgba($dark-blue, 0.8);
+    @include displayFlex(start, center, 0);
+    flex-direction: column;
+    margin: 2.3em 0;
+
+    .menu-items {
+      @include displayFlex(start, center, 3.5em);
+      margin-left: 0.6em;
+
+      li {
+        font-size: 1.1rem;
+
+        &:hover {
+          color: $white;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .footer-links {
+    margin-top: 3.7em;
+
+    i {
+      font-size: 1.4rem;
+      margin: 0 0.4em;
+      color: $dark-blue;
+
+      &:hover {
+        color: $white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@import "./media_queries";
+
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block !important;
+}
